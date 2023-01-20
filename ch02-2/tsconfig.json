@@ -17,5 +17,5 @@
     "noImplicitAny": false, // 암시적 any타입 설정 여부 .. 나중 문제
     "paths": {"*": ["node_module/*"]} //소스 파일의 
   },
-  "include": ["src/**/*"] // src 디렉터리는 물론 src의 하위 디렉터리에 있는 모든 파일을 컴파일 대상으로 포함함
+  "include": ["src/**/*"] // src 디렉터리는 물론 src의 하위 디렉터리에 있는 모든 파일을 컴파일 대상으로 포함함.
 }
