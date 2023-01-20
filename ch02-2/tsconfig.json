@@ -15,7 +15,7 @@
     "sourceMap": true, // js.map 파일생성 여부, 소스맵 파일은 변환된 자바스크립트 코드가 타입스크립트 코드의 어디에 해당하는지 알려줌. 주로 디버깅에 사용
     "downlevelIteration": true, // 생성기 타입스크립트 구문 정상작동을 위해 true로 설정해야.
     "noImplicitAny": false, // 암시적 any타입 설정 여부 .. 나중 문제
-    "paths": {"*": ["node_module/*"]} //소스 파일의 
+    "paths": {"*": ["node_module/*"]} //소스 파일의 import문에서 from 부분을 해석할 때 찾아야 하는 디렉토리 설정, 외부 패키지 이면 node_modules 디렉터리에서 찾아야 하므로 키값에 node_modules/*도 포함
   },
   "include": ["src/**/*"] // src 디렉터리는 물론 src의 하위 디렉터리에 있는 모든 파일을 컴파일 대상으로 포함함.
 }
