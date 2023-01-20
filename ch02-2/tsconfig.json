@@ -1,15 +1,21 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "target": "es5",
-    "moduleResolution": "node",
-    "outDir": "dist",
+    "module": "commonjs", //모듈 동작방식 - 웹브라우저: amd(asynchronous module definition), 노드제이에스: commonjs
+    "esModuleInterop": true, // 오픈소스 JS 라이브러리 웹 브라우저 동작 가정, 예. chance  AMD 방식 - chance 패키지 동작을 위해서는 반드시 true로 설정해야..
+    "target": "es5", // 트랜스파일할 대상 자바스크립트의 버전 대부분 es5, 최신 노드제이에스 es6 가능
+    "moduleResolution": "node", // module 키값 commonjs 이면 node, amd 이면 classic
+    "outDir": "dist", 
     "baseUrl": ".",
-    "sourceMap": true,
-    "downlevelIteration": true,
-    "noImplicitAny": false,
-    "paths": {"*": ["node_module/*"]}
+    /* 
+      baseUrl과 outDir 키에는 트랜스파일된 ES5 자바스크립트 파일을 저장하는 디렉터리 설정.
+      tsc는  tsconfiq.json 파일이 있는 디렉터리에서 실행됨 따라서 현재 디렉터리(current directory)를 의미하는 "."로
+      baseUrl키값을 설정
+      outDir키 - baseUrl 설정값 기준 하위 디렉터리 이름, dist값으로 설정 - 빌드된 결과가  dist 디렉터리에 생성저장됨      
+    */
+    "sourceMap": true, // js.map 파일생성 여부, 소스맵 파일은 변환된 자바스크립트 코드가 타입스크립트 코드의 어디에 해당하는지 알려줌. 주로 디버깅에 사용
+    "downlevelIteration": true, // 생성기 타입스크립트 구문 정상작동을 위해 true로 설정해야.
+    "noImplicitAny": false, // 암시적 any타입 설정 여부 .. 나중 문제
+    "paths": {"*": ["node_module/*"]} //소스 파일의 
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"] // src 디렉터리는 물론 src의 하위 디렉터리에 있는 모든 파일을 컴파일 대상으로 포함함
 }
